@@ -65,15 +65,10 @@ nav ul li {
 
 nav ul li a {
     color: white;
-    gap: 10px;
     text-decoration: none;
     font-weight: lighter;
-    font-size: 25px;
-    border: 2px solid white 1px;
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
-    padding: 4px;
+    font-size: 22px;
+    padding: 2px;
 }
 
 nav ul li a:hover{
@@ -90,18 +85,25 @@ section {
 #home {
     background-color: #e9f7ea;
     padding: 60px;
+    font-size: 20px;
 }
 
 #features {
     background-color: #f0fdf1;
+    margin: 0px 0px 0px 20px;
+    text-align: left;
 }
 
 .feature {
-    margin: 20px;
+    margin: 20px 0px 0px 0px;
     padding: 20px;
     border: 1px solid #d2e8d3;
     border-radius: 8px;
     background-color: white;
+}
+
+.title_features{
+
 }
 
 .botao:hover{
