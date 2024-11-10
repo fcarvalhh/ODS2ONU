@@ -5,8 +5,10 @@
     font-family: Arial, sans-serif;
 }
 
-
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura total da tela */
     color: #333;
     background-color: #f5f5f5;
 }
@@ -15,19 +17,13 @@ header {
     background-color: #003501;
     color: white;
     padding: 20px 20px 10px 20px;
-    display:flex; 
+    display: flex; 
     align-items: center;
-    
-    border: solid, lightgreen, 1px;
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
+    border-bottom: 1px solid lightgreen; /* Corrigido o estilo da borda */
 }
 
-.div_header_txt{
-    /* fred: ajuste no h1 pra centralizar independente da res */
-    
-    display:flex;
+.div_header_txt {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -37,25 +33,18 @@ header {
     font-size: large;
 }
 
-.logo{
-    width: 200px;
-    height: auto;
-}
-
-.div__logo{
+.logo {
     width: 200px;
     height: auto;
 }
 
 nav ul {
-    /* fred: ajuste pra dividir em 4 espaços iguais a nav ul li */
     display: flex;
     list-style-type: none;
     background-color: #003501;
-    justify-content: space-between;
+    justify-content: space-evenly; /* Melhor distribuição */
     padding: 0;
     margin: 0;
-    
 }
 
 nav ul li {
@@ -68,18 +57,19 @@ nav ul li a {
     text-decoration: none;
     font-weight: lighter;
     font-size: 22px;
-    padding: 2px;
+    padding: 10px;
 }
 
-nav ul li a:hover{
-    font-weight:bold;
-    transform: scale(1.8);
-    transition: 100ms linear;
+nav ul li a:hover {
+    font-weight: bold;
+    transform: scale(1.1); /* Ajustado para transformação mais sutil */
+    transition: transform 100ms linear;
 }
 
 section {
     padding: 40px 20px;
     text-align: center;
+    flex-grow: 1; /* Este estilo garante que a seção ocupe o espaço restante */
 }
 
 #home {
@@ -90,49 +80,47 @@ section {
 
 #features {
     background-color: #f0fdf1;
-    margin: 0px 0px 0px 20px;
+    margin-left: 20px;
     text-align: left;
 }
 
 .feature {
-    margin: 20px 0px 0px 0px;
+    margin-top: 20px;
     padding: 20px;
     border: 1px solid #d2e8d3;
     border-radius: 8px;
     background-color: white;
 }
 
-
-.botao:hover{
+.botao:hover {
     cursor: pointer;
-    font-weight:bold;
+    font-weight: bold;
     font-size: 13px;
 }
-.div_dev_team{
+
+.div_dev_team {
     display: flex;
     flex-direction: column;
     padding: 5px;
-    justify-content:left;
+    justify-content: left;
     gap: 5px;
     text-align: left;
 }
 
-
-
-.end{
-    display:flex;
+.end {
+    display: flex;
     flex-direction: column;
-    gap: 20px
+    gap: 20px;
 }
 
-.newsletter{
+.newsletter {
     padding: 20px 20px 10px 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.about{
+.about {
     padding: 20px 20px 10px 20px;
     display: flex;
     flex-direction: column;
@@ -145,9 +133,5 @@ footer {
     color: white;
     padding: 8px;
     text-align: center;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    
+    margin-top: auto; /* Garantir que o footer vá para o final da página */
 }
-
