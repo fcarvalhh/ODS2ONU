@@ -8,7 +8,7 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura total da tela */
+    min-height: 100vh; 
     color: #333;
     background-color: #f5f5f5;
 }
@@ -19,10 +19,11 @@ header {
     padding: 20px 20px 10px 20px;
     display: flex; 
     align-items: center;
-    border-bottom: 1px solid lightgreen; /* Corrigido o estilo da borda */
+    border-bottom: 1px solid lightgreen; 
 }
 
 .div_header_txt {
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +31,8 @@ header {
     text-align: center;
     width: 100%;
     height: 100%;
-    font-size: large;
+    font-size:x-large;
+    
 }
 
 .logo {
@@ -42,7 +44,7 @@ nav ul {
     display: flex;
     list-style-type: none;
     background-color: #003501;
-    justify-content: space-evenly; /* Melhor distribuição */
+    justify-content: space-evenly; 
     padding: 0;
     margin: 0;
 }
@@ -50,6 +52,11 @@ nav ul {
 nav ul li {
     flex: 1;
     text-align: center;
+
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav ul li a {
@@ -62,19 +69,20 @@ nav ul li a {
 
 nav ul li a:hover {
     font-weight: bold;
-    transform: scale(1.1); /* Ajustado para transformação mais sutil */
+    transform: scale(1.1); 
     transition: transform 100ms linear;
 }
 
 section {
     padding: 40px 20px;
     text-align: center;
-    flex-grow: 1; /* Este estilo garante que a seção ocupe o espaço restante */
+    flex-grow: 1; 
 }
 
 #home {
     background-color: #e9f7ea;
     padding: 60px;
+    padding-bottom: 0;
     font-size: 20px;
 }
 
@@ -107,6 +115,10 @@ section {
     text-align: left;
 }
 
+.dev_team{
+    margin-top: 20px;
+}
+
 .end {
     display: flex;
     flex-direction: column;
@@ -133,5 +145,6 @@ footer {
     color: white;
     padding: 8px;
     text-align: center;
-    margin-top: auto; /* Garantir que o footer vá para o final da página */
+    margin-top: auto; 
 }
+
