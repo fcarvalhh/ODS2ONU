@@ -195,3 +195,136 @@ footer {
     margin-top: auto; 
 }
 
+.faleConosco {
+    width: 60%;
+    margin: 30px auto;
+    background: #f9f9f9; /* Cor de fundo clara similar ao fundo do segundo código */
+    padding: 40px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background-image: none; /* Removido o gradiente */
+}
+
+.faleConosco body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #f5f5f5; /* Cor de fundo do body similar ao segundo código */
+    margin: 0;
+    padding: 0;
+}
+
+.faleConosco h2 {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    background-color: #003501; /* Cor de fundo verde semelhante ao header do segundo código */
+    padding: 15px 0;
+    margin-bottom: 30px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.faleConosco form {
+    display: grid;
+    gap: 25px; 
+}
+
+.faleConosco label {
+    font-size: 16px;
+    color: #003501; /* Cor de texto ajustada para combinar com o tema do segundo código */
+    font-weight: bold;
+}
+
+.faleConosco input, .faleConosco select, .faleConosco textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #d2e8d3; /* Cor de borda verde suave, semelhante ao segundo código */
+    border-radius: 8px;
+    font-size: 15px;
+    color: #555;
+    background-color: #fff; 
+    transition: all 0.3s ease; 
+}
+
+.faleConosco input:focus, .faleConosco select:focus, .faleConosco textarea:focus {
+    border-color: #003501; /* Cor de foco ajustada para o verde principal */
+    box-shadow: 0 0 10px rgba(0, 53, 1, 0.2); /* Cor de sombra mais suave em verde */
+}
+
+.faleConosco textarea {
+    resize: vertical;
+    height: 150px; 
+}
+
+.faleConosco button {
+    padding: 12px 30px;
+    background-color: #003501; /* Cor de fundo do botão ajustada para o verde escuro */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faleConosco button:hover {
+    background-color: #1abc9c; /* Verde mais claro no hover */
+    transform: translateY(-3px); 
+}
+
+.faleConosco .form-group {
+    display: flex;
+    gap: 20px; 
+}
+
+.faleConosco .form-group input {
+    width: 48%; 
+}
+
+.faleConosco input, .faleConosco textarea, .faleConosco select {
+    border-radius: 12px; 
+    border: 2px solid #d2e8d3; /* Borda suave ajustada */
+}
+
+.faleConosco input:focus, .faleConosco select:focus, .faleConosco textarea:focus {
+    border-color: #003501; /* Cor de foco ajustada para o verde principal */
+    outline: none; 
+    box-shadow: 0 0 10px rgba(0, 53, 1, 0.3); 
+}
+
+.sucesso-alert {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #003501; /* Cor de fundo de sucesso ajustada para o verde escuro */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 1000;
+    text-align: center;
+}
+
+.sucesso-alert.show {
+    display: block;
+}
+
+.sucesso-alert p {
+    margin: 0;
+}
+
+.sucesso-alert button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+
