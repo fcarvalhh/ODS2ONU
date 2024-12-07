@@ -1,12 +1,14 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const formulario = document.getElementById('formulario');
     const cpfInput = document.getElementById('cpf');
     const telefoneInput = document.getElementById('telefone');
     const emailInput = document.getElementById('email');
+    const mensagemInput = document.getElementById('mensagem');
+    const nomeInput = document.getElementById('nome');
 
     // Função para formatar CPF
     function formatarCPF(cpf) {
-        cpf = cpf.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+        cpf = cpf.replace(/\D/g, '');
         if (cpf.length <= 3) return cpf;
         if (cpf.length <= 6) return cpf.replace(/(\d{3})(\d{1,})/, '$1.$2');
         if (cpf.length <= 9) return cpf.replace(/(\d{3})(\d{3})(\d{1,})/, '$1.$2.$3');
@@ -15,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Função para formatar Telefone
     function formatarTelefone(telefone) {
-        telefone = telefone.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+        telefone = telefone.replace(/\D/g, '');
         if (telefone.length <= 2) return `(${telefone}`;
         if (telefone.length <= 7) return `(${telefone.substring(0, 2)}) ${telefone.substring(2)}`;
         return `(${telefone.substring(0, 2)}) ${telefone.substring(2, 7)}-${telefone.substring(7, 11)}`;
@@ -57,32 +59,53 @@ document.addEventListener("DOMContentLoaded", function() {
         return regex.test(email);
     }
 
+    // Validar mensagem
+    function validarMensagem(mensagem) {
+        const minLength = 30;
+        const maxLength = 500;
+        return mensagem.length >= minLength && mensagem.length <= maxLength;
+    }
+
+    // Validar nome completo
+    function validarNome(nome) {
+        const palavras = nome.trim().split(/\s+/);
+        return palavras.length >= 2;
+    }
+
     // Limitar o tamanho de caracteres para o CPF e o telefone
     function limitarTamanho(input, maxLength, formatar) {
-        input.addEventListener('input', function() {
+        input.addEventListener('input', function () {
             let valor = input.value;
             if (valor.length > maxLength) {
-                valor = valor.slice(0, maxLength); // Limita o valor a maxLength
+                valor = valor.slice(0, maxLength);
             }
-            input.value = formatar(valor); // Aplica a formatação ao valor
+            input.value = formatar(valor);
         });
     }
 
     // Definir limite de caracteres para CPF e telefone (14 para CPF e 15 para telefone)
-    limitarTamanho(cpfInput, 14, formatarCPF);  // CPF com 14 caracteres, incluindo pontos e traço
-    limitarTamanho(telefoneInput, 15, formatarTelefone);  // Telefone com 15 caracteres, incluindo parênteses, espaço e traço
+    limitarTamanho(cpfInput, 14, formatarCPF);
+    limitarTamanho(telefoneInput, 15, formatarTelefone);
 
     // Ao submeter o formulário
-    formulario.addEventListener('submit', function(event) {
+    formulario.addEventListener('submit', function (event) {
         let cpf = cpfInput.value;
         let telefone = telefoneInput.value;
         let email = emailInput.value;
+        let mensagem = mensagemInput.value.trim();
+        let nome = nomeInput.value.trim();
 
         // Formatando os campos antes de enviar
         cpfInput.value = formatarCPF(cpf);
         telefoneInput.value = formatarTelefone(telefone);
 
         // Validação
+        if (!validarNome(nome)) {
+            alert("Por favor, insira seu nome completo (nome e sobrenome).");
+            event.preventDefault();
+            return false;
+        }
+
         if (!validarCPF(cpfInput.value)) {
             alert("CPF inválido!");
             event.preventDefault();
@@ -97,6 +120,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (!validarEmail(emailInput.value)) {
             alert("Email inválido!");
+            event.preventDefault();
+            return false;
+        }
+
+        if (!validarMensagem(mensagem)) {
+            alert("A mensagem deve ter entre 30 e 500 caracteres.");
             event.preventDefault();
             return false;
         }
